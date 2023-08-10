@@ -79,7 +79,7 @@
         android:layout_marginTop="608dp"
         android:background="#E2FBFF"
         android:fontFamily="@font/griffy"
-        android:onClick="openActivity4"
+        android:onClick="openBasket"
         android:text="REDIGER MENU"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"

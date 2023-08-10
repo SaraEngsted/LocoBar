@@ -6,4 +6,55 @@
     android:layout_height="match_parent"
     tools:context=".Payment">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CBF2FB"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvPaymentTitle"
+            android:layout_width="265dp"
+            android:layout_height="52dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="113dp"
+            android:layout_marginTop="151dp"
+            android:fontFamily="@font/griffy"
+            android:text="Betalingsside"
+            android:textColor="#121111"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        <Button
+            android:id="@+id/finish_payment_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="266dp"
+            android:layout_marginTop="287dp"
+            android:text="Finish Payment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/total_price_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="211dp"
+            android:text="Total Price: "
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </RelativeLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
