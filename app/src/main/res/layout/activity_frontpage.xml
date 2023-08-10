@@ -53,6 +53,7 @@
         android:onClick="button1"
         android:text="START DAGEN"
         android:textStyle="bold"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:rippleColor="#BD4040" />
@@ -68,6 +69,7 @@
         android:onClick="button2"
         android:text="REDIGER MENU"
         android:textStyle="bold"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -81,6 +83,7 @@
         android:fontFamily="@font/griffy"
         android:onClick="openBasket"
         android:text="REDIGER MENU"
+        android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
