@@ -12,6 +12,15 @@
         android:theme="@style/Theme.LocoBar"
         tools:targetApi="31">
         <activity
+            android:name=".GridViewAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".GridViewAdapterr"
+            android:exported="false" />
+        <activity
+            android:name=".grid_item"
+            android:exported="false" />
+        <activity
             android:name=".Payment"
             android:exported="false" />
         <activity
@@ -26,14 +35,12 @@
         <activity
             android:name=".Frontpage"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-          <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-          </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
