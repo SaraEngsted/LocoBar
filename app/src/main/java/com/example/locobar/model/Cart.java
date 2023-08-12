@@ -11,7 +11,7 @@ public class Cart {
         cartItems = new ArrayList<>();
     }
     public void addToCart(String productName, double price, int quantity){
-        CartItem item = new CartItem(productName, price, quantity);
+        CartItem item = new CartItem(productName, price, quantity, "imageURI");
         cartItems.add(item);
     }
 

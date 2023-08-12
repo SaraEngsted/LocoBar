@@ -9,22 +9,23 @@ public class CartItem {
     private int quantity;
     private ImageView imageView;
 
+    private String imageURI;
 
 
-    public CartItem(String productName,double price, int quantity){
+
+    public CartItem(String productName, double price, int quantity, String imageURI){
         this.productName = productName;
         this.price = price;
         this.quantity = quantity;
+        this.imageURI = imageURI;
     }
 
-    public CartItem(String productName, double price) {
+    public CartItem(String productName, double price, String imageURI) {
         this.productName = productName;
         this.price = price;
+        this.imageURI = imageURI;
     }
 
-    public CartItem() {
-
-    }
 
     public void setImageView(ImageView imageView) {
         this.imageView = imageView;

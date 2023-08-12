@@ -117,6 +117,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:rippleColor="#BD4040"/>
 
+    <Button
+        android:id="@+id/uploadImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tilføj billede"
+        tools:layout_editor_absoluteX="116dp"
+        tools:layout_editor_absoluteY="373dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,7 +9,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
 import android.view.MenuItem;
@@ -21,7 +20,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.locobar.model.Cart;
 import com.example.locobar.model.CartItem;
@@ -30,8 +28,6 @@ import com.example.locobar.service.FirebaseService;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-
-import java.util.List;
 
 public class Menu extends AppCompatActivity {
     private static final String TAG = "Menu";
@@ -263,7 +259,7 @@ public class Menu extends AppCompatActivity {
 
                 double price = 15;
 
-                CartItem item = new CartItem(productName, price, quantity);
+                CartItem item = new CartItem(productName, price, quantity, "imageURI");
                 cart.addToCart(item);
 
 
