@@ -1,6 +1,8 @@
 package com.example.locobar.service;
 
 
+import android.widget.ArrayAdapter;
+
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.example.locobar.model.CartItem;
@@ -23,8 +25,8 @@ public class FirebaseService {
         firebase.collection("genstand")
                 .add(data);
     }
-
-    public void getAllItems(final GridViewAdapter adapter) {
+//final GridViewAdapter adapter
+    public void getAllItems(ArrayAdapter adapter) {
         firebase.collection("genstand")
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {

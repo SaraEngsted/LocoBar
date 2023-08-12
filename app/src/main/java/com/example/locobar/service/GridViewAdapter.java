@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -35,11 +36,13 @@ public class GridViewAdapter extends ArrayAdapter<CartItem> {
         }
 
         CartItem item = getItem(position);
+        Log.d("MyApp", "Item: " + item);
 
         if (item != null) {
             TextView navnTextView = view.findViewById(R.id.navnTextView);
             TextView prisTextView = view.findViewById(R.id.prisTextView);
-
+            Log.d("MyApp", "Product Name: " + item.getProductName());
+            Log.d("MyApp", "Product Name: " + item.getPrice());
             navnTextView.setText(item.getProductName());
             prisTextView.setText(String.valueOf(item.getPrice()));
         }
