@@ -20,10 +20,10 @@ public class CartItem {
         this.imageURI = imageURI;
     }
 
-    public CartItem(String productName, double price, String imageURI) {
+    public CartItem(String productName, double price) {
         this.productName = productName;
         this.price = price;
-        this.imageURI = imageURI;
+
     }
 
 

@@ -25,13 +25,29 @@ public class FirebaseService {
 
 
 
-    public void addItem(CartItem cartItem){
+    public void addItem(CartItem cartItem, Uri imageUriFromPhone){
 
-        Map<String, Object> data = new HashMap<>();
-        data.put("navn", cartItem.getProductName());
-        data.put("pris", cartItem.getPrice());
-        firebase.collection("genstand")
-                .add(data);
+        StorageReference storageRef = FirebaseStorage.getInstance().getReference();
+        StorageReference imageRef = storageRef.child("images/" + imageUriFromPhone.getLastPathSegment());
+
+        imageRef.putFile(imageUriFromPhone)
+                .addOnSuccessListener(taskSnapshot -> {
+
+                    String imageUrl = taskSnapshot.getMetadata().getReference().getDownloadUrl().toString();
+
+                    Map<String, Object> data = new HashMap<>();
+                    data.put("navn", cartItem.getProductName());
+                    data.put("pris", cartItem.getPrice());
+                    data.put("imageUri", imageUrl);
+                    firebase.collection("genstand")
+                            .add(data);
+
+                    //storeImageUrlInDatabase(imageUrl);
+                })
+                .addOnFailureListener(exception -> {
+
+                    // Handle errors
+                });
     }
 //final GridViewAdapter adapter
     public void getAllItems(ArrayAdapter adapter) {
@@ -44,7 +60,7 @@ public class FirebaseService {
                         double pris = document.getDouble("pris");
                         String imageURI = document.getString("imageURI");
 
-                        CartItem item = new CartItem(name, pris, imageURI);
+                        CartItem item = new CartItem(name, pris);
                         listOfItems.add(item);
                     }
                     adapter.addAll(listOfItems);

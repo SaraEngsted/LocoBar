@@ -13,13 +13,14 @@ import android.widget.EditText;
 import com.example.locobar.model.CartItem;
 import com.example.locobar.service.FirebaseService;
 
+import java.net.URI;
+
 public class EditMenu extends AppCompatActivity {
 
     private EditText editTextName;
     private EditText editTextPrice;
     private Button buttonAdd;
-
-    private String imageURI;
+    private Uri selectedImageUri;
     private final FirebaseService firebaseService = new FirebaseService();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +46,8 @@ public class EditMenu extends AppCompatActivity {
     private void addItem() {
         String productName = editTextName.getText().toString().trim();
         double price = Double.parseDouble(editTextPrice.getText().toString().trim());
-        CartItem itemToAdd = new CartItem(productName, price, imageURI);
-        firebaseService.addItem(itemToAdd);
+        CartItem itemToAdd = new CartItem(productName, price);
+        firebaseService.addItem(itemToAdd, selectedImageUri);
     }
 
     //kalder uploadImage
@@ -68,8 +69,7 @@ public class EditMenu extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null) {
-            Uri selectedImageUri = data.getData();
-            firebaseService.uploadImageToFirebaseStorage(selectedImageUri);
+            selectedImageUri = data.getData();
         }
     }
 
