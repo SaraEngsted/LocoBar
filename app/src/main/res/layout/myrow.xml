@@ -9,11 +9,41 @@
         android:id="@+id/myRowTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="336dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="337dp"
+        android:layout_marginEnd="16dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/classic"
+        android:layout_width="123dp"
+        android:layout_height="97dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="164dp"
+        android:layout_marginBottom="618dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/myRowTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/classic" />
+
+    <TextView
+        android:id="@+id/myRowTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="164dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="650dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/classic"
+        app:layout_constraintTop_toBottomOf="@+id/myRowTextView"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E2FBFF"
     tools:context=".Menu">
 
 
@@ -144,7 +145,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="296dp"
         android:layout_marginTop="648dp"
-        android:background="#00BCD4"
+        android:background="#E2FBFF"
+        android:textColor="@color/black"
         android:text="Betal Nu"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

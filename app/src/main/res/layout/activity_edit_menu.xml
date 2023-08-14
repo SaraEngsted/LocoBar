@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E2FBFF"
     tools:context=".EditMenu">
-
 
 
     <TextView
@@ -115,15 +115,21 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:rippleColor="#BD4040"/>
+        app:rippleColor="#BD4040" />
 
     <Button
         android:id="@+id/uploadImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="143dp"
+        android:layout_marginBottom="179dp"
         android:text="Tilføj billede"
-        tools:layout_editor_absoluteX="116dp"
-        tools:layout_editor_absoluteY="373dp" />
+        app:layout_constraintBottom_toTopOf="@+id/buttonAdd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EditTextIPrice" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

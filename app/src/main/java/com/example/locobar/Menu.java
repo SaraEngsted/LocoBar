@@ -24,6 +24,7 @@ import android.widget.TextView;
 import com.example.locobar.model.Cart;
 import com.example.locobar.model.CartItem;
 import com.example.locobar.service.FirebaseService;
+import com.example.locobar.service.ImageAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,28 +34,34 @@ public class Menu extends AppCompatActivity {
     private static final String TAG = "Menu";
 
     private Cart cart;
-    private CartItem cartItem;
-    private List<CartItem> cartItems = new ArrayList<>();
+    private List<CartItem> cartItems;
     private ListView viewList;
-    private ArrayAdapter<CartItem> adapter;
 
-    private final FirebaseService firebaseService = new FirebaseService();
+    private FirebaseService firebaseService = new FirebaseService();
+
+    private ImageAdapter imageAdapter;
 
     private void removeCartItem(CartItem item){
         cart.removeFromCart(item);
         Toast.makeText(Menu.this,"Varen er fjernet fra kurven", Toast.LENGTH_SHORT).show();
     }
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         viewList = findViewById(R.id.listView);
-        adapter = new ArrayAdapter<>(this, R.layout.myrow, R.id.myRowTextView, cartItems);
-        viewList.setAdapter(adapter);
-        firebaseService.getAllItems(adapter);
+        firebaseService = new FirebaseService();
+        cartItems = new ArrayList<>();
+        imageAdapter = new ImageAdapter(cartItems, this);
+        viewList.setAdapter(imageAdapter);
+        fetchAllItems();
         cart = new Cart();
         ImageButton cartButton = findViewById(R.id.cart_button);
         Button btnPayNow = findViewById(R.id.btnPayNow);
+
 
         cartButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,7 +79,16 @@ public class Menu extends AppCompatActivity {
             }
         });
     }
-
+    private void fetchAllItems() {
+        firebaseService.getAllItems2().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                cartItems.addAll(task.getResult());
+                imageAdapter.notifyDataSetChanged();
+            } else {
+                // Handle the fetch error
+            }
+        });
+    }
     public void cart_button(View view) {
         // Handle click event for cart_button
         // Implement the desired functionality here
@@ -238,8 +254,6 @@ public class Menu extends AppCompatActivity {
 
 
 
-    private void addToCart() {
-    }
 
     private  void showQuantityDialog(String productName) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

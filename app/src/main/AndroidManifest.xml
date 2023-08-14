@@ -12,19 +12,7 @@
         android:theme="@style/Theme.LocoBar"
         tools:targetApi="31">
         <activity
-            android:name=".GridViewAdapter"
-            android:exported="false" />
-        <activity
-            android:name=".GridViewAdapterr"
-            android:exported="false" />
-        <activity
-            android:name=".grid_item"
-            android:exported="false" />
-        <activity
             android:name=".Payment"
-            android:exported="false" />
-        <activity
-            android:name=".Basket"
             android:exported="false" />
         <activity
             android:name=".EditMenu"
@@ -43,7 +31,7 @@
         </activity>
 
     </application>
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 

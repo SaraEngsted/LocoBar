@@ -11,15 +11,15 @@
         android:id="@+id/imageView3"
         android:layout_width="411dp"
         android:layout_height="1092dp"
-        android:background="#00000000"
+        android:background="#E2FBFF"
         android:scaleType="centerCrop"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.916"
         app:srcCompat="@drawable/offi_baggrund"
-        tools:layout_editor_absoluteX="0dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp" />
 
     <TextView
         android:id="@+id/textView"
@@ -52,8 +52,8 @@
         android:fontFamily="@font/griffy"
         android:onClick="button1"
         android:text="START DAGEN"
-        android:textStyle="bold"
         android:textColor="#000000"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:rippleColor="#BD4040" />

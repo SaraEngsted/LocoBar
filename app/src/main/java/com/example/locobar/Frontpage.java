@@ -23,9 +23,6 @@ public class Frontpage extends AppCompatActivity {
         button2 = (Button) findViewById(R.id.button2);
         button2.setOnClickListener(view -> openEditMenu());
 
-        button3 = (Button) findViewById(R.id.button3);
-        button3.setOnClickListener(view -> openBasket());
-
     }
 
     public void openMenu(){
@@ -36,10 +33,5 @@ public class Frontpage extends AppCompatActivity {
     public void openEditMenu() {
         Intent intent2 = new Intent(this, EditMenu.class);
         startActivity(intent2);
-    }
-
-    public void openBasket(){
-        Intent intent3 = new Intent(this, Basket.class);
-        startActivity(intent3);
     }
 }
