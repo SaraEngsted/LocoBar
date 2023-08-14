@@ -28,7 +28,6 @@ public class ImageAdapter extends ArrayAdapter<CartItem> {
     private StorageReference reference = storage.getReference();
     private List<CartItem> items;
 
-
     public ImageAdapter(List<CartItem> items, Context context) {
         super(context, R.layout.list_item, items);
         this.context = context;

@@ -24,7 +24,8 @@
         android:id="@+id/item_image_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible" />
+        android:visibility="visible"
+        android:onClick="showPopupMenu"/>
     <!-- Add more TextViews or other views as needed -->
 
 </LinearLayout>

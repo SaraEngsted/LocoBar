@@ -41,6 +41,8 @@ public class Menu extends AppCompatActivity {
 
     private ImageAdapter imageAdapter;
 
+
+
     private void removeCartItem(CartItem item){
         cart.removeFromCart(item);
         Toast.makeText(Menu.this,"Varen er fjernet fra kurven", Toast.LENGTH_SHORT).show();
@@ -53,6 +55,7 @@ public class Menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         viewList = findViewById(R.id.listView);
+
         firebaseService = new FirebaseService();
         cartItems = new ArrayList<>();
         imageAdapter = new ImageAdapter(cartItems, this);
