@@ -92,6 +92,8 @@ public class Menu extends AppCompatActivity {
             }
         });
     }
+
+    //Hardcode herfra og ned:
     public void cart_button(View view) {
         // Handle click event for cart_button
         // Implement the desired functionality here
@@ -274,7 +276,9 @@ public class Menu extends AppCompatActivity {
                 int quantity = Integer.parseInt(quantityString);
 
 
-                double price = 15;
+                TextView priceText = findViewById(R.id.item_price);
+                String str = priceText.getText().toString();
+                double price = Double.parseDouble(str);
 
                 CartItem item = new CartItem(productName, price, quantity, "imageURI");
                 cart.addToCart(item);
@@ -289,10 +293,7 @@ public class Menu extends AppCompatActivity {
         builder.create().show();
 
     }
+}
 
-    private void handleQuantity(int quantity){
 
-        Toast.makeText(this, "Antal tilføjet: " + quantity, Toast.LENGTH_SHORT).show();
-
-    }}
 
