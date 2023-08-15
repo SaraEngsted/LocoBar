@@ -276,6 +276,7 @@ public class Menu extends AppCompatActivity {
                 int quantity = Integer.parseInt(quantityString);
 
 
+                //tager data price_item
                 TextView priceText = findViewById(R.id.item_price);
                 String str = priceText.getText().toString();
                 double price = Double.parseDouble(str);
